@@ -1,11 +1,12 @@
 import { CollectionConfig, UploadField } from "payload/types";
 
-const Media = {
+const Media: CollectionConfig = {
   slug: "media",
   access: {
     read: () => true,
     create: () => true,
   },
+  fields: [],
   upload: {
     staticURL: "/media",
     staticDir: "media",
