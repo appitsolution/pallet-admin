@@ -7,7 +7,7 @@ import Media from "./collections/Media";
 import Orders from "./collections/Orders";
 
 export default buildConfig({
-  serverURL: "http://localhost:3001",
+  serverURL: process.env.SERVER_ADMIN,
   admin: {
     user: Users.slug,
   },
