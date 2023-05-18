@@ -4,13 +4,14 @@ import path from "path";
 import Users from "./collections/Users";
 import Products from "./collections/Products";
 import Media from "./collections/Media";
+import Orders from "./collections/Orders";
 
 export default buildConfig({
   serverURL: "http://localhost:3001",
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Products, Media],
+  collections: [Users, Products, Media, Orders],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
