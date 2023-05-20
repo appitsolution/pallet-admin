@@ -22,7 +22,7 @@ const Buyout: CollectionConfig = {
       required: true,
     },
     {
-      name: "number",
+      name: "phone",
       type: "text",
       required: true,
     },
