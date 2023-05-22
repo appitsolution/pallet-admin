@@ -46,6 +46,11 @@ const Products: CollectionConfig = {
       required: true,
     },
     {
+      name: "categories",
+      type: "text",
+      required: true,
+    },
+    {
       name: "images",
       type: "array",
       required: true,
