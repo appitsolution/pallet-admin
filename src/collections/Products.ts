@@ -47,8 +47,9 @@ const Products: CollectionConfig = {
     },
     {
       name: "categories",
-      type: "text",
-      required: true,
+      type: "relationship",
+      relationTo: "categories-products", // Указание связанной коллекции
+      hasMany: false, // Указание, что каждый продукт относится только к одной категории
     },
     {
       name: "images",

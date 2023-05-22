@@ -6,13 +6,14 @@ import Products from "./collections/Products";
 import Media from "./collections/Media";
 import Orders from "./collections/Orders";
 import Buyout from "./collections/Buyout";
+import CategoriesProducts from "./collections/CategoriesProducts";
 
 export default buildConfig({
   serverURL: process.env.SERVER_ADMIN,
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Products, Media, Orders, Buyout],
+  collections: [Users, Products, Media, Orders, Buyout, CategoriesProducts],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
