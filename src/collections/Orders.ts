@@ -1,3 +1,4 @@
+import axios from "axios";
 import { CollectionConfig } from "payload/types";
 
 // Example Collection - For reference only, this must be added to payload.config.ts to be used.
@@ -40,6 +41,18 @@ const Orders: CollectionConfig = {
         },
       ],
       defaultValue: "loading",
+      hooks: {
+        afterChange: [
+          (args) => {
+            if (args.data.statusOrder === "accept") {
+              axios.post(`${process.env.SERVER_API}/auth/bonus/activated`, {
+                id: args.data.id,
+                idUser: args.data.idUser,
+              });
+            }
+          },
+        ],
+      },
       required: true,
     },
     {
