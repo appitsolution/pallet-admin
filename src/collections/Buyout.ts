@@ -46,9 +46,15 @@ const Buyout: CollectionConfig = {
       type: "text",
     },
     {
-      name: "image",
-      type: "upload",
-      relationTo: "media",
+      name: "images",
+      type: "array",
+      fields: [
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+        },
+      ],
     },
   ],
 };

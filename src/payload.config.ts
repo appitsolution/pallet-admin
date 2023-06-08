@@ -7,13 +7,22 @@ import Media from "./collections/Media";
 import Orders from "./collections/Orders";
 import Buyout from "./collections/Buyout";
 import CategoriesProducts from "./collections/CategoriesProducts";
+import ResetBonusUser from "./collections/ResetBonusUser";
 
 export default buildConfig({
   serverURL: process.env.SERVER_ADMIN,
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Products, Media, Orders, Buyout, CategoriesProducts],
+  collections: [
+    Users,
+    Products,
+    Media,
+    Orders,
+    Buyout,
+    CategoriesProducts,
+    ResetBonusUser,
+  ],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
