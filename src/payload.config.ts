@@ -8,6 +8,7 @@ import Orders from "./collections/Orders";
 import Buyout from "./collections/Buyout";
 import CategoriesProducts from "./collections/CategoriesProducts";
 import ResetBonusUser from "./collections/ResetBonusUser";
+import Storehouse from "./collections/Storehouse";
 
 export default buildConfig({
   serverURL: process.env.SERVER_ADMIN,
@@ -22,6 +23,7 @@ export default buildConfig({
     Buyout,
     CategoriesProducts,
     ResetBonusUser,
+    Storehouse,
   ],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
