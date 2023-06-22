@@ -1,4 +1,6 @@
 import { CollectionConfig } from "payload/types";
+import { isAdmin } from "../access/isAdmin";
+import { isAdminOrSelf } from "../access/isAdminOrSelf";
 
 // Example Collection - For reference only, this must be added to payload.config.ts to be used.
 const Buyout: CollectionConfig = {
@@ -8,7 +10,9 @@ const Buyout: CollectionConfig = {
   },
   access: {
     read: () => true,
-    create: () => true,
+    create: isAdminOrSelf,
+    update: isAdminOrSelf,
+    delete: isAdmin,
   },
   fields: [
     {

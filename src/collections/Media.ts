@@ -1,10 +1,13 @@
 import { CollectionConfig, UploadField } from "payload/types";
+import { isAdmin } from "../access/isAdmin";
 
 const Media: CollectionConfig = {
   slug: "media",
   access: {
     read: () => true,
     create: () => true,
+    update: isAdmin,
+    delete: isAdmin,
   },
   fields: [],
   upload: {

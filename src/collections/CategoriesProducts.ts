@@ -1,4 +1,5 @@
 import { CollectionConfig } from "payload/types";
+import { isAdmin } from "../access/isAdmin";
 
 // Example Collection - For reference only, this must be added to payload.config.ts to be used.
 const CategoriesProducts: CollectionConfig = {
@@ -8,7 +9,9 @@ const CategoriesProducts: CollectionConfig = {
   },
   access: {
     read: () => true,
-    create: () => true,
+    create: isAdmin,
+    update: isAdmin,
+    delete: isAdmin,
   },
 
   fields: [

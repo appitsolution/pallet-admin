@@ -1,7 +1,7 @@
 import { buildConfig } from "payload/config";
 import path from "path";
 // import Examples from './collections/Examples';
-import Users from "./collections/Users";
+import { Users } from "./collections/Users";
 import Products from "./collections/Products";
 import Media from "./collections/Media";
 import Orders from "./collections/Orders";
