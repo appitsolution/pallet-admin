@@ -10,6 +10,7 @@ const CategoriesProducts: CollectionConfig = {
     read: () => true,
     create: () => true,
   },
+
   fields: [
     {
       name: "id",

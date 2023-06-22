@@ -68,7 +68,10 @@ const Orders: CollectionConfig = {
     {
       name: "address",
       type: "text",
-      required: true,
+    },
+    {
+      name: "storehouse",
+      type: "text",
     },
     {
       name: "paymentSelect",
