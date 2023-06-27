@@ -26,7 +26,6 @@ const Orders: CollectionConfig = {
       type: "text",
       required: true,
     },
-
     {
       name: "statusOrder",
       type: "select",
