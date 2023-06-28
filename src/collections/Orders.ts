@@ -11,7 +11,7 @@ const Orders: CollectionConfig = {
   },
   access: {
     read: () => true,
-    create: isAdminOrSelf,
+    create: () => true,
     update: isAdminOrSelf,
     delete: isAdmin,
   },
@@ -132,6 +132,14 @@ const Orders: CollectionConfig = {
           required: true,
         },
       ],
+    },
+    {
+      name: "againData",
+      type: "json",
+      required: true,
+      admin: {
+        hidden: true,
+      },
     },
   ],
 };
