@@ -59,6 +59,21 @@ const Orders: CollectionConfig = {
       required: true,
     },
     {
+      name: "statusPayment",
+      type: "select",
+      options: [
+        {
+          label: "Оплачено",
+          value: "accept",
+        },
+        {
+          label: "Не Оплачено",
+          value: "not accept",
+        },
+      ],
+      defaultValue: "not accept",
+    },
+    {
       name: "city",
       type: "text",
       required: true,
