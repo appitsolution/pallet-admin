@@ -15,11 +15,6 @@ const Products: CollectionConfig = {
   },
   fields: [
     {
-      name: "id",
-      type: "text",
-      required: true,
-    },
-    {
       name: "name",
       type: "text",
       required: true,
