@@ -1,5 +1,6 @@
 import { CollectionConfig } from "payload/types";
 import { isAdmin } from "../access/isAdmin";
+import payload from "payload";
 
 // Example Collection - For reference only, this must be added to payload.config.ts to be used.
 const Products: CollectionConfig = {
@@ -13,7 +14,36 @@ const Products: CollectionConfig = {
     update: isAdmin,
     delete: isAdmin,
   },
+  hooks: {
+    beforeValidate: [
+      async (args) => {
+        function generateProductId(numberProduct: number) {
+          var productId = (numberProduct + 1).toString().padStart(6, "0");
+          return productId;
+        }
+        const result = await payload.find({ collection: "products" as never });
+
+        if (args.operation === "create") {
+          return {
+            ...args.data,
+            _id: generateProductId(result.totalDocs),
+            id: generateProductId(result.totalDocs),
+          };
+        } else {
+          return args.data;
+        }
+      },
+    ],
+  },
   fields: [
+    {
+      name: "id",
+      type: "text",
+      required: true,
+      admin: {
+        hidden: true,
+      },
+    },
     {
       name: "name",
       type: "text",
