@@ -45,6 +45,11 @@ const Products: CollectionConfig = {
       },
     },
     {
+      name: "customId",
+      type: "text",
+      required: true,
+    },
+    {
       name: "name",
       type: "text",
       required: true,

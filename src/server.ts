@@ -1,11 +1,16 @@
 import express from "express";
 import payload from "payload";
 import cors from "cors";
+import createMedia from "./utils/createMedia";
+import multer from "multer";
 
 require("dotenv").config();
 const app = express();
 
-// Redirect root to Admin panel
+// const upload = multer();
+
+// app.post("/create-media", upload.single("file"), createMedia);
+
 app.get("/", (_, res) => {
   res.redirect("/admin");
 });

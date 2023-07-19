@@ -10,7 +10,7 @@ const Buyout: CollectionConfig = {
   },
   access: {
     read: () => true,
-    create: isAdminOrSelf,
+    create: () => true,
     update: isAdminOrSelf,
     delete: isAdmin,
   },
